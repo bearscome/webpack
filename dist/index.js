@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"메인 인덱스?\")\n\n//# sourceURL=webpack://webpack/./src/index.js?");
+eval("console.log(\"안녕?\")\n\n//# sourceURL=webpack://webpack/./src/index.js?");
 
 /***/ })
 

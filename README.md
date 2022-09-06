@@ -22,3 +22,29 @@
     - Plugins: 웹팩의 동작 방식을 바꿔주는 서드파티 확장 프로그램들이다.
     - Mode: 개발(development)과 생산(production) 두 모드를 정의한다. 기본모드는 생산이다.
 ----------------------------
+# 3. 엔트리포인트 변경
+웹팩의 엔트리 폴더는 기본적으로 src/index.js다.<br>
+해당 경로를 변경하고 싶으면 entry의 속성추가하여 변경하면 된다.<br>
+기존 경로 (변경하지 않으면 작성X)
+```
+module.exports = {
+  entry: './source/index.js',
+}
+```
+변경한 경로
+```
+const path = require('path')
+module.exports = {
+  entry: { index: path.resolve(__dirname, 'source', 'index.js') },
+}
+```
+
+# 4. 추출 폴더 변경
+웹팩의 아웃풋 폴더는 기본적으로 dis폴더이다.<br>
+해당 경로를 변경하고 싶으면 output의 속성을 추가하여 변경하면 된다.
+```
+const path = require('path')
+module.exports = {
+  output: { path: path.resolve(__dirname, 'build'), filename: 'main.js' },
+}
+```
